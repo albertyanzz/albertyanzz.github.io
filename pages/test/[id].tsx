@@ -1,7 +1,7 @@
-import { getAllPostIds, getPostData } from "../lib/posts";
+import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
 import { GetStaticProps, GetStaticPaths, NextPage } from "next";
-import { IParams } from "../lib/types";
+import { IParams } from "../../lib/types";
 import { Params } from "next/dist/server/router";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
