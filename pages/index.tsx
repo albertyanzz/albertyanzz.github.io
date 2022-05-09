@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -18,9 +19,15 @@ const Home: NextPage = () => {
           <div className={styles.nav_container}>
             <div className={styles.title}>Albert Yan</div>
             <div className={styles.menu}>
-              <a href="/about">About</a>
-              <a href="/experiences">Experience</a>
-              <a href="/links">Links</a>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+              <Link href="/experiences">
+                <a>Experience</a>
+              </Link>
+              <Link href="/links">
+                <a>Links</a>
+              </Link>
             </div>
           </div>
         </div>
