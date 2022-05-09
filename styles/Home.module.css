@@ -1,15 +1,30 @@
+@font-face {
+  font-family: "Granny"; /*a name to be used later*/
+  src: url("/GrannyRegular-ALYgg.ttf"); /*URL to font*/
+}
+
 .container {
   padding: 0 2rem;
+  background-color: bisque;
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.main hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 50%;
+  background-color: grey;
+  height: 1px;
 }
 
 .footer {
@@ -42,12 +57,13 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 8vw;
+  font-family: "Granny";
 }
 
 .title,
 .description {
-  text-align: center;
+  text-align: left;
 }
 
 .description {
@@ -113,4 +129,62 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.nav_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: whitesmoke;
+  position: relative;
+  width: 50%;
+  top: 30%;
+  left: 10%;
+}
+
+.background_container {
+  width: 100vw;
+  height: 200vh;
+  background-image: url("/albertpic.jpg");
+  background-size: cover;
+}
+
+.background_img {
+  max-width: 100%;
+  height: auto;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 2vw;
+  margin-left: -20%;
+  height: 10vw;
+}
+
+.about_content {
+  width: 50%;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 50vh;
+  font-size: 6vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: whitesmoke;
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.experiences {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }

@@ -13,12 +13,22 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Personal site updated soon</h1>
+        {/* <h1 className={styles.title}>Personal site updated soon</h1> */}
+        <div className={styles.background_container}>
+          <div className={styles.nav_container}>
+            <div className={styles.title}>Albert Yan</div>
+            <div className={styles.menu}>
+              <a href="/about">About</a>
+              <a href="/experiences">Experience</a>
+              <a href="/links">Links</a>
+            </div>
+          </div>
+        </div>
       </main>
 
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <p>Last Updated March 26, 2022</p>
-      </footer>
+      </footer> */}
     </div>
   );
 };
