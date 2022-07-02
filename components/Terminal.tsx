@@ -13,7 +13,7 @@ export const Terminal: React.FC = () => {
     directoryTree,
   ]);
   const [currDirectory, setCurrDirectory] = useState<IDirectory>(directoryTree);
-  const [keyIt, setKeyIt] = useState(0);
+  var keyIt = 0;
 
   const updateScroll = () => {
     setTimeout(() => {
@@ -25,11 +25,10 @@ export const Terminal: React.FC = () => {
   };
 
   const addLine = (str: string) => {
-    setKeyIt(keyIt + 1);
     setLines((line) => [
       ...line,
       <TerminalLine
-        key={keyIt}
+        key={keyIt++}
         path={_.cloneDeep(
           directoryPath.map((dir) => {
             return dir.name;
@@ -123,11 +122,10 @@ export const Terminal: React.FC = () => {
   };
 
   const printToConsole = (strs: string[]) => {
-    setKeyIt(keyIt + 1);
     const val = (
       <div className={styles.console_print}>
         {strs.map((str) => {
-          return <span key={keyIt}>{str}</span>;
+          return <span key={keyIt++}>{str}</span>;
         })}
       </div>
     );
