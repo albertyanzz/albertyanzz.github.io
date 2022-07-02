@@ -26,5 +26,12 @@ export interface IDirectory {
 
 export interface IFile {
   name: string;
-  content: string[];
+  content: IContent[];
+  link?: boolean;
+}
+
+export interface IContent {
+  type?: string; // link, text
+  content: string;
+  link?: string;
 }

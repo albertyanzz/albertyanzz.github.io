@@ -11,6 +11,9 @@
   overflow: auto;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .terminal_container::-webkit-scrollbar {
@@ -25,4 +28,24 @@
 .console_print {
   display: flex;
   flex-direction: column;
+}
+
+.minimized {
+  z-index: 9;
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  background-color: #300a24;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 20px;
+  right: 20px;
+  position: fixed;
+}
+
+.minimized:hover {
+  cursor: pointer;
+  background-color: #50103c;
 }

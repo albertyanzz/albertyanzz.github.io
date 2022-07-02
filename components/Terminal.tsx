@@ -4,10 +4,11 @@ import { TerminalLine } from "./TerminalLine";
 import { useState } from "react";
 import { TerminalContext } from "../lib/contexts";
 import { directoryTree } from "../lib/directory";
-import { IDirectory } from "../lib/types";
+import { IDirectory, IContent } from "../lib/types";
 import _ from "lodash";
 
 export const Terminal: React.FC = () => {
+  const [minimized, setMinimized] = useState(true);
   const [lines, setLines] = useState<JSX.Element[]>([]);
   const [directoryPath, setDirectoryPath] = useState<IDirectory[]>([
     directoryTree,
@@ -58,6 +59,7 @@ export const Terminal: React.FC = () => {
           "<cd> <path>: Switch directory to <path> (paths can be subdirectories or .. for previous directory)",
           "<cat> <file>: View contents of file in current directory",
           "<clear>: Clear terminal",
+          "<exit>: Minimize terminal window",
         ]);
         break;
       case "cd":
@@ -108,17 +110,44 @@ export const Terminal: React.FC = () => {
             (f) => f.name.toLowerCase() === val.toLowerCase()
           );
           if (file) {
-            printToConsole(file.content);
+            printContent(file.content);
           }
         }
         break;
       case "clear":
         setLines([]);
         break;
+      case "exit":
+        setMinimized(true);
+        break;
       default:
         printToConsole(["Unknown command. Type <help> to see commands."]);
         break;
     }
+  };
+
+  const printContent = (contents: IContent[]) => {
+    const val = (
+      <div className={styles.console_print}>
+        {contents.map((content) => {
+          switch (content.type) {
+            case "link":
+              return (
+                <span key={keyIt++}>
+                  <a href={content.link} target="_blank" rel="noreferrer">
+                    {content.content}
+                  </a>
+                </span>
+              );
+            default:
+              return <span key={keyIt++}>{content.content}</span>;
+          }
+        })}
+      </div>
+    );
+
+    setLines((line) => [...line, val]);
+    updateScroll();
   };
 
   const printToConsole = (strs: string[]) => {
@@ -136,24 +165,35 @@ export const Terminal: React.FC = () => {
 
   return (
     <TerminalContext.Provider value={{ state: [], dispatch: addLine }}>
-      <label htmlFor="input-line">
-        <Draggable axis="both" defaultPosition={{ x: 50, y: 50 }}>
-          <div id="terminal" className={styles.terminal_container}>
-            <p className={styles.welcome_text}>
-              Welcome to Albert&apos;s site. Type &lt;help&gt; to see options.
-            </p>
-            {lines.map((line) => {
-              return line;
-            })}
-            <TerminalLine
-              path={directoryPath.map((dir) => {
-                return dir.name;
+      {minimized ? (
+        <div
+          className={styles.minimized}
+          onClick={() => {
+            setMinimized(false);
+          }}
+        >
+          &#91; / &#93;
+        </div>
+      ) : (
+        <label htmlFor="input-line">
+          <Draggable axis="both" defaultPosition={{ x: 0, y: 0 }}>
+            <div id="terminal" className={styles.terminal_container}>
+              <p className={styles.welcome_text}>
+                Welcome to Albert&apos;s site. Type &lt;help&gt; to see options.
+              </p>
+              {lines.map((line) => {
+                return line;
               })}
-              input={true}
-            />
-          </div>
-        </Draggable>
-      </label>
+              <TerminalLine
+                path={directoryPath.map((dir) => {
+                  return dir.name;
+                })}
+                input={true}
+              />
+            </div>
+          </Draggable>
+        </label>
+      )}
     </TerminalContext.Provider>
   );
 };
