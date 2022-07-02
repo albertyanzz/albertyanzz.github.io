@@ -16,3 +16,15 @@ export interface IExperience {
   dateEnd?: string;
   contentHtml: string;
 }
+
+export interface IDirectory {
+  name: string;
+  subDirectories: IDirectory[];
+  files: IFile[];
+  parent?: IDirectory;
+}
+
+export interface IFile {
+  name: string;
+  content: string[];
+}
