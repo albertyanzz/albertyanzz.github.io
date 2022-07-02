@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import { Terminal } from "../components/Terminal";
 import Link from "next/link";
 
 const Home: NextPage = () => {
@@ -16,9 +16,11 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         {/* <h1 className={styles.title}>Personal site updated soon</h1> */}
         <div className={styles.background_container}>
+          <Terminal />
           <div className={styles.nav_container}>
             <div className={styles.title}>Albert Yan</div>
-            <div className={styles.menu}>
+
+            {/* <div className={styles.menu}>
               <Link href="/about">
                 <a>About</a>
               </Link>
@@ -28,7 +30,7 @@ const Home: NextPage = () => {
               <Link href="/links">
                 <a>Links</a>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </main>

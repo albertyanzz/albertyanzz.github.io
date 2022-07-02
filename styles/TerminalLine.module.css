@@ -1,0 +1,30 @@
+.input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+  font-family: monospace;
+  margin-left: 5px;
+  padding: 0px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.white {
+  color: white;
+}
+
+.light_green {
+  color: #00ff00;
+}
+
+.light_cyan {
+  color: #55ffff;
+}
+
+.children {
+  color: white;
+  margin-left: 5px;
+  padding: 0px;
+}
