@@ -6,8 +6,13 @@ import { TerminalContext } from "../lib/contexts";
 import { directoryTree } from "../lib/directory";
 import { IDirectory, IContent } from "../lib/types";
 import _ from "lodash";
+import { useMediaQuery } from "react-responsive";
 
 export const Terminal: React.FC = () => {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 1224px)",
+  });
+
   const [minimized, setMinimized] = useState(true);
   const [lines, setLines] = useState<JSX.Element[]>([]);
   const [directoryPath, setDirectoryPath] = useState<IDirectory[]>([
@@ -48,8 +53,8 @@ export const Terminal: React.FC = () => {
   };
 
   const command = (str: string) => {
-    const com = str.substring(0, str.indexOf(" "));
-    const val = str.substring(str.indexOf(" ") + 1);
+    const com = str.substring(0, str.indexOf(" ")).toLowerCase();
+    const val = str.substring(str.indexOf(" ") + 1).toLowerCase();
 
     switch (com || val) {
       case "help":
@@ -163,6 +168,26 @@ export const Terminal: React.FC = () => {
     updateScroll();
   };
 
+  const terminalWindow = (
+    <div
+      id="terminal"
+      className={isMobile ? styles.mobile_terminal : styles.terminal_container}
+    >
+      <p className={styles.welcome_text}>
+        Welcome to Albert&apos;s site. Type &lt;help&gt; to see options.
+      </p>
+      {lines.map((line) => {
+        return line;
+      })}
+      <TerminalLine
+        path={directoryPath.map((dir) => {
+          return dir.name;
+        })}
+        input={true}
+      />
+    </div>
+  );
+
   return (
     <TerminalContext.Provider value={{ state: [], dispatch: addLine }}>
       {minimized ? (
@@ -170,28 +195,20 @@ export const Terminal: React.FC = () => {
           className={styles.minimized}
           onClick={() => {
             setMinimized(false);
+            updateScroll();
           }}
         >
           &#91; / &#93;
         </div>
       ) : (
         <label htmlFor="input-line">
-          <Draggable axis="both" defaultPosition={{ x: 0, y: 0 }}>
-            <div id="terminal" className={styles.terminal_container}>
-              <p className={styles.welcome_text}>
-                Welcome to Albert&apos;s site. Type &lt;help&gt; to see options.
-              </p>
-              {lines.map((line) => {
-                return line;
-              })}
-              <TerminalLine
-                path={directoryPath.map((dir) => {
-                  return dir.name;
-                })}
-                input={true}
-              />
-            </div>
-          </Draggable>
+          {isMobile ? (
+            terminalWindow
+          ) : (
+            <Draggable axis="both" defaultPosition={{ x: 0, y: 0 }}>
+              {terminalWindow}
+            </Draggable>
+          )}
         </label>
       )}
     </TerminalContext.Provider>
