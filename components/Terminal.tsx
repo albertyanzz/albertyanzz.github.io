@@ -13,6 +13,7 @@ export const Terminal: React.FC = () => {
     directoryTree,
   ]);
   const [currDirectory, setCurrDirectory] = useState<IDirectory>(directoryTree);
+  const [keyIt, setKeyIt] = useState(0);
 
   const updateScroll = () => {
     setTimeout(() => {
@@ -24,9 +25,11 @@ export const Terminal: React.FC = () => {
   };
 
   const addLine = (str: string) => {
+    setKeyIt(keyIt + 1);
     setLines((line) => [
       ...line,
       <TerminalLine
+        key={keyIt}
         path={_.cloneDeep(
           directoryPath.map((dir) => {
             return dir.name;
@@ -120,10 +123,11 @@ export const Terminal: React.FC = () => {
   };
 
   const printToConsole = (strs: string[]) => {
+    setKeyIt(keyIt + 1);
     const val = (
       <div className={styles.console_print}>
         {strs.map((str) => {
-          return <span>{str}</span>;
+          return <span key={keyIt}>{str}</span>;
         })}
       </div>
     );
@@ -138,7 +142,7 @@ export const Terminal: React.FC = () => {
         <Draggable axis="both" defaultPosition={{ x: 50, y: 50 }}>
           <div id="terminal" className={styles.terminal_container}>
             <p className={styles.welcome_text}>
-              Welcome to Albert's site. Type &lt;help&gt; to see options.
+              Welcome to Albert&apos;s site. Type &lt;help&gt; to see options.
             </p>
             {lines.map((line) => {
               return line;
