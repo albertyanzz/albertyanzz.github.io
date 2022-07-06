@@ -12,7 +12,7 @@ const Selection: NextPage = () => {
 
   return (
     <div className={isMobile ? styles.mobile_container : styles.container}>
-      <Link href="/about">
+      <Link href="/about" passHref>
         <div
           className={classNames(
             isMobile ? styles.mobile_nav : styles.nav_column,
@@ -22,7 +22,7 @@ const Selection: NextPage = () => {
           About
         </div>
       </Link>
-      <Link href="/experience">
+      <Link href="/experience" passHref>
         <div
           className={classNames(
             isMobile ? styles.mobile_nav : styles.nav_column,
@@ -32,7 +32,7 @@ const Selection: NextPage = () => {
           Experience
         </div>
       </Link>
-      <Link href="/projects">
+      <Link href="/projects" passHref>
         <div
           className={classNames(
             isMobile ? styles.mobile_nav : styles.nav_column,
@@ -42,7 +42,7 @@ const Selection: NextPage = () => {
           Projects
         </div>
       </Link>
-      <Link href="/links">
+      <Link href="/links" passHref>
         <div
           className={classNames(
             isMobile ? styles.mobile_nav : styles.nav_column,

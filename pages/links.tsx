@@ -46,6 +46,7 @@ const Links: NextPage = () => {
               key={link.url}
               href={link.url}
               target="_blank"
+              rel="noreferrer"
               className={isMobile ? styles.mobile_link : ""}
             >
               <SvgIcon component={link.icon} {...iconStyle} />
