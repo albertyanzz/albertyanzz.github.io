@@ -1,38 +1,57 @@
 import type { NextPage } from "next";
-import styles from "../styles/Home.module.css";
+import { SideMenu } from "../components/SideMenu";
+import { SvgIcon } from "@mui/material";
+import styles from "../styles/Links.module.css";
+import github from "../assets/links/github.svg";
+import linkedin from "../assets/links/linkedin.svg";
+import instagram from "../assets/links/Instagram.svg";
+import mail from "../assets/links/Mail.svg";
+import { useMediaQuery } from "react-responsive";
+import { mobileWidth } from "../lib/constants";
+import { MobileMenu } from "../components/MobileMenu";
 
 const Links: NextPage = () => {
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${mobileWidth}px)`,
+  });
+
+  const iconStyle = {
+    style: {
+      height: isMobile ? "100px" : "150px",
+      width: isMobile ? "100px" : "150px",
+    },
+    viewBox: "0 0 48 48",
+  };
+
+  const links = [
+    { url: "https://www.linkedin.com/in/albertzyan/", icon: linkedin },
+    { url: "https://github.com/albertyanzz", icon: github },
+    { url: "https://www.instagram.com/albertzzyan/", icon: instagram },
+    { url: "mailto:albertyanalbert@gmail.com", icon: mail },
+  ];
+
   return (
-    <div className={styles.container}>
-      <div className={styles.links}>
-        <a
-          href="https://www.linkedin.com/in/albertzyan/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          LinkedIn
-        </a>
-        <a
-          href="https://github.com/albertyanzz/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Github
-        </a>
-        <a
-          href="https://www.facebook.com/profile.php?id=100002934891788"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Facebook
-        </a>
-        <a
-          href="https://www.instagram.com/albertzzyan/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Instagram
-        </a>
+    <div className={isMobile ? styles.mobile_container : styles.container}>
+      {isMobile ? (
+        <MobileMenu />
+      ) : (
+        <div className={styles.side_bar}>
+          <SideMenu />
+        </div>
+      )}
+      <div className={isMobile ? styles.mobile_content : styles.content}>
+        {links.map((link) => {
+          return (
+            <a
+              key={link.url}
+              href={link.url}
+              target="_blank"
+              className={isMobile ? styles.mobile_link : ""}
+            >
+              <SvgIcon component={link.icon} {...iconStyle} />
+            </a>
+          );
+        })}
       </div>
     </div>
   );

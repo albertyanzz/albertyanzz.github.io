@@ -1,28 +1,15 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { Terminal } from "../components/Terminal";
 import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.background_container}>
-      {/* <Terminal /> */}
-      <div className={styles.nav_container}>
-        <div className={styles.title}>Albert Yan</div>
-
-        <div className={styles.menu}>
-          <div>Other pages coming soon</div>
-          {/* <Link href="/about">
-            <a>About</a>
-          </Link>
-          <Link href="/experiences">
-            <a>Experience</a>
-          </Link>
-          <Link href="/links">
-            <a>Links</a>
-          </Link> */}
-        </div>
-      </div>
+    <div className={styles.container}>
+      <Terminal />
+      <Link href="/selection">
+        <button className={styles.button}>Continue to main site</button>
+      </Link>
     </div>
   );
 };

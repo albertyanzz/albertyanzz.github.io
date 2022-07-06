@@ -3,7 +3,11 @@ import { GetStaticProps } from "next";
 import { getPostsDataByFolder } from "../lib/posts";
 import { Params } from "next/dist/server/router";
 import { IExperience } from "../lib/types";
-import styles from "../styles/Experiences.module.css";
+import { SideMenu } from "../components/SideMenu";
+import styles from "../styles/Experience.module.css";
+import { useMediaQuery } from "react-responsive";
+import { mobileWidth } from "../lib/constants";
+import { MobileMenu } from "../components/MobileMenu";
 
 export const getStaticProps: GetStaticProps = async () => {
   const experienceDataPromise = await getPostsDataByFolder(
@@ -17,15 +21,29 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Experiences: NextPage<Params> = ({ experienceData }) => {
+const Experience: NextPage<Params> = ({ experienceData }) => {
   //   const experienceJson = Promise.all(experienceData);
   //   console.log(experienceData);
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${mobileWidth}px)`,
+  });
+
   return (
-    <div className={styles.container}>
-      <div style={{ marginTop: "5%", fontWeight: "500" }}>
-        For more complete experiences, see LinkedIn profile on Links page
+    <div className={isMobile ? styles.mobile_container : styles.container}>
+      {isMobile ? (
+        <MobileMenu />
+      ) : (
+        <div className={styles.side_bar}>
+          <SideMenu />
+        </div>
+      )}
+      <div className={isMobile ? styles.mobile_content : styles.content}>
+        <div className={styles.placeholder}></div>
+        <div className={styles.placeholder}></div>
+        <div className={styles.placeholder}></div>
+        <div className={styles.placeholder}></div>
       </div>
-      <div className={styles.experiences}>
+      {/* <div className={styles.experiences}>
         {experienceData.map((experience: IExperience) => (
           <div key={experience.title}>
             <h1>{experience.title}</h1>
@@ -36,9 +54,9 @@ const Experiences: NextPage<Params> = ({ experienceData }) => {
             <div dangerouslySetInnerHTML={{ __html: experience.contentHtml }} />
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default Experiences;
+export default Experience;
