@@ -3,7 +3,6 @@ import { useState } from "react";
 import menu from "../assets/menu.svg";
 import styles from "../styles/MobileMenu.module.css";
 import Link from "next/link";
-import { MobileContext } from "../lib/contexts";
 
 export const MobileMenu: React.FC = () => {
   const [hidden, setHidden] = useState(true);
