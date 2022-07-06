@@ -7,13 +7,14 @@ import { directoryTree } from "../lib/directory";
 import { IDirectory, IContent } from "../lib/types";
 import _ from "lodash";
 import { useMediaQuery } from "react-responsive";
+import { mobileWidth } from "../lib/constants";
 
 export const Terminal: React.FC = () => {
   const isMobile = useMediaQuery({
-    query: "(max-width: 1224px)",
+    query: `(max-width: ${mobileWidth}px)`,
   });
 
-  const [minimized, setMinimized] = useState(true);
+  const [minimized, setMinimized] = useState(false);
   const [lines, setLines] = useState<JSX.Element[]>([]);
   const [directoryPath, setDirectoryPath] = useState<IDirectory[]>([
     directoryTree,
@@ -205,9 +206,7 @@ export const Terminal: React.FC = () => {
           {isMobile ? (
             terminalWindow
           ) : (
-            <Draggable axis="both" defaultPosition={{ x: 0, y: 0 }}>
-              {terminalWindow}
-            </Draggable>
+            <Draggable axis="both">{terminalWindow}</Draggable>
           )}
         </label>
       )}

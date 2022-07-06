@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
-import { Terminal } from "./Terminal";
 import styles from "../styles/Layout.module.css";
 
 type Props = {
@@ -14,10 +13,7 @@ export default function Layout({ children }: Props) {
       <Head>
         <title>Albert Yan</title>
       </Head>
-      <main className={styles.main}>
-        <Terminal />
-        {children}
-      </main>
+      <main className={styles.main}>{children}</main>
     </div>
   );
 }

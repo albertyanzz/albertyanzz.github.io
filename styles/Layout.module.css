@@ -1,11 +1,13 @@
 .main {
   min-height: 100vh;
   /* padding: 4rem 0; */
+  height: 100%;
+  width: 100%;
   flex: 1;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .main hr {
@@ -18,5 +20,5 @@
 }
 
 .container {
-  background-color: bisque;
+  background-color: black;
 }
