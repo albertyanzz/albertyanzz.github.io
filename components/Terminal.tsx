@@ -1,7 +1,7 @@
 import Draggable from "react-draggable";
 import styles from "../styles/Terminal.module.css";
 import { TerminalLine } from "./TerminalLine";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TerminalContext } from "../lib/contexts";
 import { directoryTree } from "../lib/directory";
 import { IDirectory, IContent } from "../lib/types";
@@ -169,11 +169,16 @@ export const Terminal: React.FC = () => {
     updateScroll();
   };
 
+  const [terminalStyle, setTerminalStyle] = useState(styles.terminal_container);
+
+  useEffect(() => {
+    isMobile
+      ? setTerminalStyle(styles.mobile_terminal)
+      : setTerminalStyle(styles.terminal_container);
+  }, [isMobile]);
+
   const terminalWindow = (
-    <div
-      id="terminal"
-      className={isMobile ? styles.mobile_terminal : styles.terminal_container}
-    >
+    <div id="terminal" className={terminalStyle}>
       <p className={styles.welcome_text}>
         Welcome to Albert&apos;s site. Type &lt;help&gt; to see options.
       </p>
