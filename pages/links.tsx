@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useEffect, useState } from "react";
 import { SideMenu } from "../components/SideMenu";
 import { SvgIcon } from "@mui/material";
 import styles from "../styles/Links.module.css";
@@ -11,9 +12,15 @@ import { mobileWidth } from "../lib/constants";
 import { MobileMenu } from "../components/MobileMenu";
 
 const Links: NextPage = () => {
-  const isMobile = useMediaQuery({
+  const mobile = useMediaQuery({
     query: `(max-width: ${mobileWidth}px)`,
   });
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    mobile ? setIsMobile(true) : setIsMobile(false);
+  }, [mobile]);
 
   const iconStyle = {
     style: {

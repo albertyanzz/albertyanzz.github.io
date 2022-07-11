@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useEffect, useState } from "react";
 import styles from "../styles/Projects.module.css";
 import { SideMenu } from "../components/SideMenu";
 import { useMediaQuery } from "react-responsive";
@@ -6,9 +7,15 @@ import { mobileWidth } from "../lib/constants";
 import { MobileMenu } from "../components/MobileMenu";
 
 const Projects: NextPage = () => {
-  const isMobile = useMediaQuery({
+  const mobile = useMediaQuery({
     query: `(max-width: ${mobileWidth}px)`,
   });
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    mobile ? setIsMobile(true) : setIsMobile(false);
+  }, [mobile]);
 
   return (
     <div className={isMobile ? styles.mobile_container : styles.container}>

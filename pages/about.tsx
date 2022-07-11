@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useEffect, useState } from "react";
 import { GetStaticProps } from "next";
 import { getPostData } from "../lib/posts";
 import { Params } from "next/dist/server/router";
@@ -20,9 +21,15 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const About: NextPage<Params> = ({ aboutData }) => {
-  const isMobile = useMediaQuery({
+  const mobile = useMediaQuery({
     query: `(max-width: ${mobileWidth}px)`,
   });
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    mobile ? setIsMobile(true) : setIsMobile(false);
+  }, [mobile]);
 
   return (
     <div className={isMobile ? styles.mobile_container : styles.container}>

@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useEffect, useState } from "react";
 import styles from "../styles/Selection.module.css";
 import classNames from "classnames";
 import Link from "next/link";
@@ -6,9 +7,18 @@ import { useMediaQuery } from "react-responsive";
 import { mobileWidth } from "../lib/constants";
 
 const Selection: NextPage = () => {
-  const isMobile = useMediaQuery({
+  const mobile = useMediaQuery({
     query: `(max-width: ${mobileWidth}px)`,
   });
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  
+  useEffect(() => {
+    mobile
+      ? setIsMobile(true)
+      : setIsMobile(false);
+  }, [mobile]);
 
   return (
     <div className={isMobile ? styles.mobile_container : styles.container}>
