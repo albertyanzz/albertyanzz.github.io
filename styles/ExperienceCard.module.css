@@ -1,0 +1,48 @@
+.container {
+  width: 225px;
+  height: 300px;
+  background-color: #dcd7c9;
+  border-radius: 25px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.tech_bar {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  height: 100px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.text {
+  width: 180px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  padding-inline: 10px;
+  background-color: #a27b5c;
+  color: white;
+  font-family: monospace;
+}
+
+.tech {
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

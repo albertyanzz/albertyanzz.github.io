@@ -1,8 +1,11 @@
 ---
-title: Software Intern (Encore)
+company: Encore
+title: Software Intern
 dateStart: January 2022
 ended: true
 dateEnd: May 2022
+logo: encore.svg
+tech: [js, react, ts]
 ---
 
 - Worked on responsive frontend components for a webpage built on ReactJs, Typescript, and MaterialUI

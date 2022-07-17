@@ -10,10 +10,21 @@ export interface IPostData {
 }
 
 export interface IExperience {
+  company: string;
   title: string;
   dateStart: string;
   ended: boolean;
   dateEnd?: string;
+  logo: string;
+  tech: string[];
+  contentHtml: string;
+}
+
+export interface IProject {
+  title: string;
+  link?: string;
+  logo: string;
+  tech: string[];
   contentHtml: string;
 }
 

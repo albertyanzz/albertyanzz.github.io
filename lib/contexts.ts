@@ -14,3 +14,13 @@ export const MenuContext = createContext<{
   selected: number;
   dispatch: React.Dispatch<any>;
 }>({ selected: 0, dispatch: () => null });
+
+export const ExpContext = createContext<{
+  selected: number;
+  dispatch: React.Dispatch<any>;
+}>({ selected: 0, dispatch: () => null });
+
+export const ProjectContext = createContext<{
+  selected: number;
+  dispatch: React.Dispatch<any>;
+}>({ selected: 0, dispatch: () => null });
