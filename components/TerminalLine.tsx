@@ -37,7 +37,7 @@ export const TerminalLine: React.FC<IProps> = ({
     </div>
   ) : (
     <div>
-      <span className={styles.light_green}>visitor@albertyanzz.github.io</span>
+      <span className={styles.light_green}>visitor@albertzzyan</span>
       <span className={styles.white}>:</span>
       <span className={styles.light_cyan}>{path.join("/")}</span>
       <span className={styles.white}>$</span>
