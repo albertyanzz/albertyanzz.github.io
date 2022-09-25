@@ -8,7 +8,8 @@ logo: encore.svg
 tech: [js, react, ts]
 ---
 
-- Worked on responsive frontend components for a webpage built on ReactJs, Typescript, and MaterialUI
-- Made dynamic web pages using Axios and React hooks to connect components to the company’s public API
-- Set up a payment gateway using Stripe and Express
-- Used ReactJs, Typescript, Stripe, ExpressJs, MaterialUI, Figma
+- Developed responsive single-page application with ReactJS and Typescript to showcase key company resources
+- Implemented and refined 10+ reusable front-end components with MaterialUI used throughout website
+- Engineered backend of project with Axios and React hooks to connect components to company’s public API
+- Established payment gateway with Stripe API and Express.js to process in-app purchases
+- Engaged in weekly code reviews and got feedback from senior developers
