@@ -1,14 +1,32 @@
-import React, { createContext } from "react";
+import React, { createContext, JSX } from 'react';
+import { IDirectory } from './types';
 
 export const FolderContext = createContext<{
   state: string;
   dispatch: React.Dispatch<any>;
-}>({ state: "", dispatch: () => null });
+}>({ state: '', dispatch: () => null });
 
 export const TerminalContext = createContext<{
-  state: string[];
+  state: {
+    lines: JSX.Element[];
+    lineHistory: string[];
+    directoryPath: IDirectory[];
+    currDirectory: IDirectory;
+    terminalStyle: string;
+  };
   dispatch: React.Dispatch<any>;
-}>({ state: [], dispatch: () => null });
+  autoComplete: (str: string) => string;
+}>({
+  state: {
+    lines: [],
+    lineHistory: [],
+    directoryPath: [],
+    currDirectory: {} as IDirectory,
+    terminalStyle: '',
+  },
+  dispatch: () => null,
+  autoComplete: (str: string) => str,
+});
 
 export const MenuContext = createContext<{
   selected: number;
