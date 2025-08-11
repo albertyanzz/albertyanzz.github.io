@@ -4,14 +4,20 @@ title: Hello! I'm Albert
 
 &emsp;&emsp;
 
-I recently graduated from USC with a Master's and Bachelor's degree in Computer Science. Currently, I am on a break as I fulfill my military service obligation in Taiwan.
-During this period, I have dedicated my time to continuing my personal education journey by exploring AWS, experimenting with React, and developing my passion project (which will be available soon). Outside of CS, my interests include the NBA, dance, and playing Pokemon with my girlfriend. :\)
+I am a full-stack engineer with an obsession for solving problems. I'm constantly learning and expanding my horizons, and I'm always open to hearing about new opportunities.
 
-I have experience in full-stack web development, and I have worked effectively in both team and individual settings. I have also been dipping my toes in cloud engineering and mobile development. Currently, I am seeking opportunities in these areas, so please feel free to contact me if you think there is a role that would be a good fit!
+Outside of CS, my interests include the NBA, dance, and playing Pokémon with my girlfriend. :\)
 
 &nbsp;
 
-Some notable courses I took at USC:
+Fun facts:
+
+- I have a 3150 day (as of Aug 2025) streak on Duolingo (and running)
+- I've journaled every single day since June 2017 (I can tell you what I've done on any given day since then)
+
+&nbsp;
+
+Some notable courses I took during my time in university (USC):
 
 - Advanced Front-End Web Development
 - Professional C++
