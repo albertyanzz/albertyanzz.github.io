@@ -88,11 +88,14 @@ const cp: IFile = {
 const quill: IFile = {
   name: 'quill',
   content: [
-    { content: 'Software Engineer' },
+    { content: 'Founding Engineer' },
     { content: 'Jul 2024 - Aug 2025' },
+    { content: '- Built embedded analytics platform serving 10+ clients' },
     {
-      content: '- ',
+      content: '- Reduced query load times by 90% with AST-driven architecture',
     },
+    { content: '- Expanded SDK coverage from 2 to 6 programming languages' },
+    { content: '- Designed multi-tenancy architecture for enterprise clients' },
   ],
 };
 
@@ -139,7 +142,7 @@ const links: IDirectory = {
 const experience: IDirectory = {
   name: 'Experience',
   subDirectories: [],
-  files: [encore, cp],
+  files: [quill, encore, cp],
 };
 
 const projects: IDirectory = {
