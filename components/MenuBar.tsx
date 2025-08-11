@@ -1,7 +1,7 @@
-import styles from "../styles/SideMenu.module.css";
-import { MenuContext } from "../lib/contexts";
-import { useContext } from "react";
-import Link from "next/link";
+import styles from '../styles/SideMenu.module.css';
+import { MenuContext } from '../lib/contexts';
+import { useContext } from 'react';
+import Link from 'next/link';
 
 interface IProps {
   length: number;
@@ -19,11 +19,11 @@ export const MenuBar: React.FC<IProps> = ({
   onClick,
 }) => {
   const barStyle = {
-    backgroundColor: "#FFFFFF",
-    height: "12px",
-    borderRadius: "6px",
+    backgroundColor: '#FFFFFF',
+    height: '12px',
+    borderRadius: '6px',
     width: `${length}px`,
-    marginRight: "10px",
+    marginRight: '10px',
   };
 
   const { selected, dispatch: setSelected } = useContext(MenuContext);
@@ -38,7 +38,7 @@ export const MenuBar: React.FC<IProps> = ({
       }}
     >
       <div style={barStyle} />
-      <div className={styles.bar}>{selected === 0 ? "" : text}</div>
+      <div className={styles.bar}>{selected === 0 ? '' : text}</div>
     </div>
   );
 

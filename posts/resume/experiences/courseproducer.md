@@ -2,7 +2,8 @@
 company: USC Viterbi
 title: Course Producer
 dateStart: August 2021
-ended: false
+ended: true
+dateEnd: December 2022
 logo: usc.svg
 tech: []
 ---

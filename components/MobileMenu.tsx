@@ -1,13 +1,13 @@
-import { SvgIcon } from "@mui/material";
-import { useState } from "react";
-import menu from "../assets/menu.svg";
-import styles from "../styles/MobileMenu.module.css";
-import Link from "next/link";
+import { SvgIcon } from '@mui/material';
+import { useState } from 'react';
+import menu from '../assets/menu.svg';
+import styles from '../styles/MobileMenu.module.css';
+import Link from 'next/link';
 
 export const MobileMenu: React.FC = () => {
   const [hidden, setHidden] = useState(true);
 
-  const sel = ["About", "Experience", "Projects", "Links"];
+  const sel = ['About', 'Experience', 'Projects', 'Links'];
 
   return (
     <div className={styles.container}>
@@ -15,9 +15,9 @@ export const MobileMenu: React.FC = () => {
         <SvgIcon
           component={menu}
           style={{
-            height: "50px",
-            width: "50px",
-            cursor: "pointer",
+            height: '50px',
+            width: '50px',
+            cursor: 'pointer',
             zIndex: 9,
           }}
           viewBox="0 0 48 48"
@@ -30,8 +30,8 @@ export const MobileMenu: React.FC = () => {
           <div className={styles.links}>
             {sel.map((s) => {
               return (
-                <Link href={s.toLowerCase()} key={s}>
-                  <a className={styles.link}>{s}</a>
+                <Link href={s.toLowerCase()} key={s} className={styles.link}>
+                  {s}
                 </Link>
               );
             })}

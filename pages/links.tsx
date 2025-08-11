@@ -1,15 +1,15 @@
-import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import { SideMenu } from "../components/SideMenu";
-import { SvgIcon } from "@mui/material";
-import styles from "../styles/Links.module.css";
-import github from "../assets/links/github.svg";
-import linkedin from "../assets/links/linkedin.svg";
-import instagram from "../assets/links/instagram.svg";
-import mail from "../assets/links/mail.svg";
-import { useMediaQuery } from "react-responsive";
-import { mobileWidth } from "../lib/constants";
-import { MobileMenu } from "../components/MobileMenu";
+import type { NextPage } from 'next';
+import { useEffect, useState } from 'react';
+import { SideMenu } from '../components/SideMenu';
+import { SvgIcon } from '@mui/material';
+import styles from '../styles/Links.module.css';
+import github from '../assets/links/github.svg';
+import linkedin from '../assets/links/linkedin.svg';
+import instagram from '../assets/links/instagram.svg';
+import mail from '../assets/links/mail.svg';
+import { useMediaQuery } from 'react-responsive';
+import { mobileWidth } from '../lib/constants';
+import { MobileMenu } from '../components/MobileMenu';
 
 const Links: NextPage = () => {
   const mobile = useMediaQuery({
@@ -24,17 +24,17 @@ const Links: NextPage = () => {
 
   const iconStyle = {
     style: {
-      height: isMobile ? "100px" : "150px",
-      width: isMobile ? "100px" : "150px",
+      height: isMobile ? '100px' : '150px',
+      width: isMobile ? '100px' : '150px',
     },
-    viewBox: "0 0 48 48",
+    viewBox: '0 0 48 48',
   };
 
   const links = [
-    { url: "https://www.linkedin.com/in/albertzyan/", icon: linkedin },
-    { url: "https://github.com/albertyanzz", icon: github },
-    { url: "https://www.instagram.com/albertzzyan/", icon: instagram },
-    { url: "mailto:albertyanalbert@gmail.com", icon: mail },
+    { url: 'https://www.linkedin.com/in/albertzyan/', icon: linkedin },
+    { url: 'https://github.com/albertyanzz', icon: github },
+    { url: 'https://www.instagram.com/albertzzyan/', icon: instagram },
+    { url: 'mailto:albertyanalbert@gmail.com', icon: mail },
   ];
 
   return (
@@ -54,7 +54,7 @@ const Links: NextPage = () => {
               href={link.url}
               target="_blank"
               rel="noreferrer"
-              className={isMobile ? styles.mobile_link : ""}
+              className={isMobile ? styles.mobile_link : ''}
             >
               <SvgIcon component={link.icon} {...iconStyle} />
             </a>

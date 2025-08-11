@@ -1,21 +1,23 @@
-import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import { GetStaticProps } from "next";
-import { getPostsDataByFolder } from "../lib/posts";
-import { Params } from "next/dist/server/router";
-import { IExperience } from "../lib/types";
-import { SideMenu } from "../components/SideMenu";
-import styles from "../styles/Experience.module.css";
-import { useMediaQuery } from "react-responsive";
-import { mobileWidth } from "../lib/constants";
-import { MobileMenu } from "../components/MobileMenu";
-import { ExperienceCard } from "../components/ExperienceCard";
-import { ExpContext } from "../lib/contexts";
+import type { NextPage } from 'next';
+import { useEffect, useState } from 'react';
+import { GetStaticProps } from 'next';
+import { getPostsDataByFolder } from '../lib/posts';
+import { IExperience } from '../lib/types';
+
+interface ExperienceProps {
+  experienceData: IExperience[];
+}
+import { SideMenu } from '../components/SideMenu';
+import styles from '../styles/Experience.module.css';
+import { useMediaQuery } from 'react-responsive';
+import { mobileWidth } from '../lib/constants';
+import { MobileMenu } from '../components/MobileMenu';
+import { ExperienceCard } from '../components/ExperienceCard';
+import { ExpContext } from '../lib/contexts';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const experienceDataPromise = await getPostsDataByFolder(
-    "resume/experiences"
-  );
+  const experienceDataPromise =
+    await getPostsDataByFolder('resume/experiences');
   const experienceData = await Promise.all(experienceDataPromise);
   return {
     props: {
@@ -24,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Experience: NextPage<Params> = ({ experienceData }) => {
+const Experience: NextPage<ExperienceProps> = ({ experienceData }) => {
   //   const experienceJson = Promise.all(experienceData);
   //   console.log(experienceData);
   const mobile = useMediaQuery({

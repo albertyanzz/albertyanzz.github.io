@@ -1,8 +1,8 @@
-import styles from "../styles/ProjectCard.module.css";
-import { IProject } from "../lib/types";
-import { ProjectModule } from "./ProjectModule";
-import { ProjectContext } from "../lib/contexts";
-import { useContext } from "react";
+import styles from '../styles/ProjectCard.module.css';
+import { IProject } from '../lib/types';
+import { ProjectModule } from './ProjectModule';
+import { ProjectContext } from '../lib/contexts';
+import { useContext } from 'react';
 
 interface IProps {
   id: number;

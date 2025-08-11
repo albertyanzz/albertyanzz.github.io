@@ -1,18 +1,22 @@
-import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import { GetStaticProps } from "next";
-import { getPostsDataByFolder } from "../lib/posts";
-import styles from "../styles/Projects.module.css";
-import { SideMenu } from "../components/SideMenu";
-import { useMediaQuery } from "react-responsive";
-import { mobileWidth } from "../lib/constants";
-import { MobileMenu } from "../components/MobileMenu";
-import { Params } from "next/dist/server/router";
-import { ProjectCard } from "../components/ProjectCard";
-import { ProjectContext } from "../lib/contexts";
+import type { NextPage } from 'next';
+import { useEffect, useState } from 'react';
+import { GetStaticProps } from 'next';
+import { getPostsDataByFolder } from '../lib/posts';
+import styles from '../styles/Projects.module.css';
+import { SideMenu } from '../components/SideMenu';
+import { useMediaQuery } from 'react-responsive';
+import { mobileWidth } from '../lib/constants';
+import { MobileMenu } from '../components/MobileMenu';
+import { ProjectCard } from '../components/ProjectCard';
+import { ProjectContext } from '../lib/contexts';
+import { IProject } from '../lib/types';
+
+interface ProjectsProps {
+  projectData: IProject[];
+}
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projectDataPromise = await getPostsDataByFolder("resume/projects");
+  const projectDataPromise = await getPostsDataByFolder('resume/projects');
   const projectData = await Promise.all(projectDataPromise);
   return {
     props: {
@@ -21,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Projects: NextPage<Params> = ({ projectData }) => {
+const Projects: NextPage<ProjectsProps> = ({ projectData }) => {
   const mobile = useMediaQuery({
     query: `(max-width: ${mobileWidth}px)`,
   });
@@ -46,7 +50,9 @@ const Projects: NextPage<Params> = ({ projectData }) => {
         value={{ selected: selected, dispatch: setSelected }}
       >
         <div className={isMobile ? styles.mobile_content : styles.content}>
-          <ProjectCard id={1} info={projectData[0]} />
+          {projectData?.map((project: IProject, i: number) => {
+            return <ProjectCard key={i} id={i + 1} info={project} />;
+          })}
         </div>
       </ProjectContext.Provider>
     </div>
