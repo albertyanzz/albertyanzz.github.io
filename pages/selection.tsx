@@ -19,45 +19,41 @@ const Selection: NextPage = () => {
 
   return (
     <div className={isMobile ? styles.mobile_container : styles.container}>
-      <Link href="/about" passHref>
-        <div
-          className={classNames(
-            isMobile ? styles.mobile_nav : styles.nav_column,
-            styles.navy
-          )}
-        >
-          About
-        </div>
+      <Link
+        href="/about"
+        className={classNames(
+          isMobile ? styles.mobile_nav : styles.nav_column,
+          styles.navy
+        )}
+      >
+        About
       </Link>
-      <Link href="/experience" passHref>
-        <div
-          className={classNames(
-            isMobile ? styles.mobile_nav : styles.nav_column,
-            styles.blue
-          )}
-        >
-          Experience
-        </div>
+      <Link
+        href="/experience"
+        className={classNames(
+          isMobile ? styles.mobile_nav : styles.nav_column,
+          styles.blue
+        )}
+      >
+        Experience
       </Link>
-      <Link href="/projects" passHref>
-        <div
-          className={classNames(
-            isMobile ? styles.mobile_nav : styles.nav_column,
-            styles.brown
-          )}
-        >
-          Projects
-        </div>
+      <Link
+        href="/projects"
+        className={classNames(
+          isMobile ? styles.mobile_nav : styles.nav_column,
+          styles.brown
+        )}
+      >
+        Projects
       </Link>
-      <Link href="/links" passHref>
-        <div
-          className={classNames(
-            isMobile ? styles.mobile_nav : styles.nav_column,
-            styles.beige
-          )}
-        >
-          Links
-        </div>
+      <Link
+        href="/links"
+        className={classNames(
+          isMobile ? styles.mobile_nav : styles.nav_column,
+          styles.beige
+        )}
+      >
+        Links
       </Link>
     </div>
   );
