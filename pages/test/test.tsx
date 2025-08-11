@@ -1,11 +1,10 @@
 import { useReducer, createContext } from 'react';
-import { Params } from 'next/dist/server/router';
 import type { NextPage } from 'next';
 import { FolderButton } from '../../components/FolderButton';
 import { FolderContext } from '../../lib/contexts';
 import Box from '@mui/material/Box';
 
-const Test: NextPage<Params> = () => {
+const Test: NextPage = () => {
   function reducer(state: string, action: string) {
     return action;
   }

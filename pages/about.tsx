@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import { GetStaticProps } from 'next';
 import { getPostData } from '../lib/posts';
-import { Params } from 'next/dist/server/router';
 import styles from '../styles/About.module.css';
 import { SideMenu } from '../components/SideMenu';
 import { SvgIcon } from '@mui/material';
@@ -10,6 +9,7 @@ import download from '../assets/download.svg';
 import { useMediaQuery } from 'react-responsive';
 import { mobileWidth } from '../lib/constants';
 import { MobileMenu } from '../components/MobileMenu';
+import { IPostData } from '../lib/types';
 
 export const getStaticProps: GetStaticProps = async () => {
   const aboutData = await getPostData('about');
@@ -20,7 +20,11 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const About: NextPage<Params> = ({ aboutData }) => {
+interface AboutProps {
+  aboutData: IPostData;
+}
+
+const About: NextPage<AboutProps> = ({ aboutData }) => {
   const mobile = useMediaQuery({
     query: `(max-width: ${mobileWidth}px)`,
   });
