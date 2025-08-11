@@ -7,8 +7,8 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Terminal />
-      <Link href="/selection" passHref>
-        <button className={styles.button}>Continue to main site</button>
+      <Link href="/about" className={styles.button}>
+        Continue to main site
       </Link>
     </div>
   );

@@ -30,8 +30,8 @@ export const MobileMenu: React.FC = () => {
           <div className={styles.links}>
             {sel.map((s) => {
               return (
-                <Link href={s.toLowerCase()} key={s}>
-                  <a className={styles.link}>{s}</a>
+                <Link href={s.toLowerCase()} key={s} className={styles.link}>
+                  {s}
                 </Link>
               );
             })}
