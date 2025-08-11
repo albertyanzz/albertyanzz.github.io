@@ -1,18 +1,18 @@
-import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import { GetStaticProps } from "next";
-import { getPostsDataByFolder } from "../lib/posts";
-import styles from "../styles/Projects.module.css";
-import { SideMenu } from "../components/SideMenu";
-import { useMediaQuery } from "react-responsive";
-import { mobileWidth } from "../lib/constants";
-import { MobileMenu } from "../components/MobileMenu";
-import { Params } from "next/dist/server/router";
-import { ProjectCard } from "../components/ProjectCard";
-import { ProjectContext } from "../lib/contexts";
+import type { NextPage } from 'next';
+import { useEffect, useState } from 'react';
+import { GetStaticProps } from 'next';
+import { getPostsDataByFolder } from '../lib/posts';
+import styles from '../styles/Projects.module.css';
+import { SideMenu } from '../components/SideMenu';
+import { useMediaQuery } from 'react-responsive';
+import { mobileWidth } from '../lib/constants';
+import { MobileMenu } from '../components/MobileMenu';
+import { Params } from 'next/dist/server/router';
+import { ProjectCard } from '../components/ProjectCard';
+import { ProjectContext } from '../lib/contexts';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projectDataPromise = await getPostsDataByFolder("resume/projects");
+  const projectDataPromise = await getPostsDataByFolder('resume/projects');
   const projectData = await Promise.all(projectDataPromise);
   return {
     props: {

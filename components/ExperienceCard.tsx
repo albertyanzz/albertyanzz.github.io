@@ -1,8 +1,8 @@
-import styles from "../styles/ExperienceCard.module.css";
-import { IExperience } from "../lib/types";
-import { ExperienceModule } from "./ExperienceModule";
-import { ExpContext } from "../lib/contexts";
-import { useContext } from "react";
+import styles from '../styles/ExperienceCard.module.css';
+import { IExperience } from '../lib/types';
+import { ExperienceModule } from './ExperienceModule';
+import { ExpContext } from '../lib/contexts';
+import { useContext } from 'react';
 
 interface IProps {
   id: number;

@@ -1,10 +1,10 @@
-import { IDirectory, IFile } from "./types";
+import { IDirectory, IFile } from './types';
 
 const aboutFile: IFile = {
-  name: "about.txt",
+  name: 'about.txt',
   content: [
     {
-      type: "text",
+      type: 'text',
       content:
         "My name is Albert and whether it's through programming, dancing, writing, giving speeches, or other media forms, I'm always looking to innovate and create something that's uniquely me.",
     },
@@ -12,133 +12,144 @@ const aboutFile: IFile = {
 };
 
 const linkedin: IFile = {
-  name: "linkedin",
+  name: 'linkedin',
   content: [
     {
-      type: "link",
-      content: "Click to go to linkedin",
-      link: "https://www.linkedin.com/in/albertzyan/",
+      type: 'link',
+      content: 'Click to go to linkedin',
+      link: 'https://www.linkedin.com/in/albertzyan/',
     },
   ],
 };
 
 const github: IFile = {
-  name: "github",
+  name: 'github',
   content: [
     {
-      type: "link",
-      content: "Click to go to github",
-      link: "https://github.com/albertyanzz/",
+      type: 'link',
+      content: 'Click to go to github',
+      link: 'https://github.com/albertyanzz/',
     },
   ],
 };
 
 const instagram: IFile = {
-  name: "instagram",
+  name: 'instagram',
   content: [
     {
-      type: "link",
-      content: "Click to go to instagram",
-      link: "https://www.instagram.com/albertzzyan/",
+      type: 'link',
+      content: 'Click to go to instagram',
+      link: 'https://www.instagram.com/albertzzyan/',
     },
   ],
 };
 
 const encore: IFile = {
-  name: "encore",
+  name: 'encore',
   content: [
-    { content: "Software Intern" },
-    { content: "Jan 2022 - May 2022" },
+    { content: 'Software Intern' },
+    { content: 'Jan 2022 - May 2022' },
     {
       content:
-        "- Worked on responsive frontend components for a webpage built on ReactJs, Typescript, and MaterialUI",
+        '- Worked on responsive frontend components for a webpage built on ReactJs, Typescript, and MaterialUI',
     },
     {
       content:
-        "- Made dynamic web pages using Axios and React hooks to connect components to the company’s public API",
+        '- Made dynamic web pages using Axios and React hooks to connect components to the company’s public API',
     },
-    { content: "- Set up a payment gateway using Stripe and Express" },
+    { content: '- Set up a payment gateway using Stripe and Express' },
     {
       content:
-        "- Used ReactJs, Typescript, Stripe, ExpressJs, MaterialUI, Figma",
+        '- Used ReactJs, Typescript, Stripe, ExpressJs, MaterialUI, Figma',
     },
   ],
 };
 
 const cp: IFile = {
-  name: "course_producer",
+  name: 'course_producer',
   content: [
-    { content: "USC Course Producer" },
-    { content: "Aug 2021 - Present" },
+    { content: 'USC Course Producer' },
+    { content: 'Aug 2021 - Dec 2022' },
     {
       content:
-        "- Held 4 hours of office hours per week assisting students with their algorithm homework and course-related questions",
+        '- Held 4 hours of office hours per week assisting students with their algorithm homework and course-related questions',
     },
     {
       content:
-        "- Managed homework grading platform (Gradescope) for a class of 222 students",
+        '- Managed homework grading platform (Gradescope) for a class of 222 students',
     },
     {
       content:
-        "- Held 4 hours of office hours per week to answer student questions about their C++ programming assignments and assisted in debugging code",
+        '- Held 4 hours of office hours per week to answer student questions about their C++ programming assignments and assisted in debugging code',
+    },
+  ],
+};
+
+const quill: IFile = {
+  name: 'quill',
+  content: [
+    { content: 'Software Engineer' },
+    { content: 'Jul 2024 - Aug 2025' },
+    {
+      content: '- ',
     },
   ],
 };
 
 const tgif: IFile = {
-  name: "tgif_website",
+  name: 'tgif_website',
   content: [
-    { content: "Website for TGIF Toastmasters" },
+    { content: 'Website for TGIF Toastmasters' },
     {
       content:
-        "SPA made with NextJs, Material UI, and custom React components.",
+        'SPA made with NextJs, Material UI, and custom React components.',
     },
-    { type: "link", content: "link", link: "https://www.tgiftoastmaster.com" },
+    // { type: "link", content: "link", link: "https://www.tgiftoastmaster.com" },
   ],
 };
 
 const microplanner: IFile = {
-  name: "microplanner",
+  name: 'microplanner',
   content: [
-    { content: "Microplanner" },
+    { content: 'Microplanner' },
     {
       content:
-        "To-do list web application with achievements and subtasks. Supports Google login.",
+        'To-do list web application with achievements and subtasks. Supports Google login.',
     },
     {
-      type: "link",
-      content: "link",
-      link: "https://elastic-poincare-f4a4a3.netlify.app/",
+      type: 'link',
+      content: 'link',
+      link: 'https://elastic-poincare-f4a4a3.netlify.app/',
     },
   ],
 };
 
 const about: IDirectory = {
-  name: "About",
+  name: 'About',
   subDirectories: [],
   files: [aboutFile],
 };
 
 const links: IDirectory = {
-  name: "Links",
+  name: 'Links',
   subDirectories: [],
   files: [linkedin, github, instagram],
 };
 
 const experience: IDirectory = {
-  name: "Experience",
+  name: 'Experience',
   subDirectories: [],
   files: [encore, cp],
 };
 
 const projects: IDirectory = {
-  name: "Projects",
+  name: 'Projects',
   subDirectories: [],
   files: [tgif, microplanner],
 };
 
 export const directoryTree: IDirectory = {
-  name: "~",
-  subDirectories: [about, links, experience, projects],
+  name: '~',
+  subDirectories: [about, links, experience], // Return projects if something notable
   files: [],
 };

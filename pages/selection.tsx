@@ -1,10 +1,10 @@
-import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import styles from "../styles/Selection.module.css";
-import classNames from "classnames";
-import Link from "next/link";
-import { useMediaQuery } from "react-responsive";
-import { mobileWidth } from "../lib/constants";
+import type { NextPage } from 'next';
+import { useEffect, useState } from 'react';
+import styles from '../styles/Selection.module.css';
+import classNames from 'classnames';
+import Link from 'next/link';
+import { useMediaQuery } from 'react-responsive';
+import { mobileWidth } from '../lib/constants';
 
 const Selection: NextPage = () => {
   const mobile = useMediaQuery({
@@ -13,11 +13,8 @@ const Selection: NextPage = () => {
 
   const [isMobile, setIsMobile] = useState(false);
 
-  
   useEffect(() => {
-    mobile
-      ? setIsMobile(true)
-      : setIsMobile(false);
+    mobile ? setIsMobile(true) : setIsMobile(false);
   }, [mobile]);
 
   return (

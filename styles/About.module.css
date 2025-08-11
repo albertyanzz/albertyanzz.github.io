@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Granny"; /*a name to be used later*/
-  src: url("/GrannyRegular-ALYgg.ttf"); /*URL to font*/
+  font-family: 'Granny'; /*a name to be used later*/
+  src: url('/GrannyRegular-ALYgg.ttf'); /*URL to font*/
 }
 
 .about_content {
@@ -75,7 +75,7 @@
 }
 
 .side_pic {
-  background-image: url("/albertpic_vert.jpg");
+  background-image: url('/albertpic_vert.jpg');
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -103,6 +103,6 @@
 }
 
 .signature {
-  font-family: "Granny";
+  font-family: 'Granny';
   font-size: 32px;
 }

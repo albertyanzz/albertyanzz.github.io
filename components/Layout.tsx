@@ -1,6 +1,6 @@
-import React, { ReactNode } from "react";
-import Head from "next/head";
-import styles from "../styles/Layout.module.css";
+import React, { ReactNode } from 'react';
+import Head from 'next/head';
+import styles from '../styles/Layout.module.css';
 
 type Props = {
   children: ReactNode;

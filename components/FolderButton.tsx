@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import FolderIcon from "@mui/icons-material/Folder";
-import FolderOpenIcon from "@mui/icons-material/FolderOpen";
-import Box from "@mui/material/Box";
-import { FolderContext } from "../lib/contexts";
+import { useContext } from 'react';
+import FolderIcon from '@mui/icons-material/Folder';
+import FolderOpenIcon from '@mui/icons-material/FolderOpen';
+import Box from '@mui/material/Box';
+import { FolderContext } from '../lib/contexts';
 
 interface IProps {
   name: string;
@@ -11,7 +11,7 @@ interface IProps {
 export const FolderButton: React.FC<IProps> = ({ name }) => {
   const folderStyle = {
     fontSize: 50,
-    color: "orange",
+    color: 'orange',
     marginBottom: -1,
   };
 
@@ -21,12 +21,12 @@ export const FolderButton: React.FC<IProps> = ({ name }) => {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "60px",
-        height: "60px",
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '60px',
+        height: '60px',
       }}
       onClick={() => {
         setSelected(name);

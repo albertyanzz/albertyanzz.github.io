@@ -1,7 +1,7 @@
-import { MenuBar } from "./MenuBar";
-import { useState } from "react";
-import styles from "../styles/SideMenu.module.css";
-import { MenuContext } from "../lib/contexts";
+import { MenuBar } from './MenuBar';
+import { useState } from 'react';
+import styles from '../styles/SideMenu.module.css';
+import { MenuContext } from '../lib/contexts';
 
 interface IProps {
   selection?: string[];
@@ -20,7 +20,7 @@ export const SideMenu: React.FC<IProps> = ({ selection }) => {
     return y * maxlen;
   };
 
-  const sel = ["About", "Experience", "Projects", "Links"];
+  const sel = ['About', 'Experience', 'Projects', 'Links'];
 
   return (
     <div

@@ -1,18 +1,18 @@
-import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import { GetStaticProps } from "next";
-import { getPostData } from "../lib/posts";
-import { Params } from "next/dist/server/router";
-import styles from "../styles/About.module.css";
-import { SideMenu } from "../components/SideMenu";
-import { SvgIcon } from "@mui/material";
-import download from "../assets/download.svg";
-import { useMediaQuery } from "react-responsive";
-import { mobileWidth } from "../lib/constants";
-import { MobileMenu } from "../components/MobileMenu";
+import type { NextPage } from 'next';
+import { useEffect, useState } from 'react';
+import { GetStaticProps } from 'next';
+import { getPostData } from '../lib/posts';
+import { Params } from 'next/dist/server/router';
+import styles from '../styles/About.module.css';
+import { SideMenu } from '../components/SideMenu';
+import { SvgIcon } from '@mui/material';
+import download from '../assets/download.svg';
+import { useMediaQuery } from 'react-responsive';
+import { mobileWidth } from '../lib/constants';
+import { MobileMenu } from '../components/MobileMenu';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const aboutData = await getPostData("about");
+  const aboutData = await getPostData('about');
   return {
     props: {
       aboutData,

@@ -1,10 +1,10 @@
-import { IProject } from "../lib/types";
-import { useEffect, useState } from "react";
-import styles from "../styles/ProjectModule.module.css";
-import { ProjectContext } from "../lib/contexts";
-import { useContext } from "react";
-import { useMediaQuery } from "react-responsive";
-import { mobileWidth } from "../lib/constants";
+import { IProject } from '../lib/types';
+import { useEffect, useState } from 'react';
+import styles from '../styles/ProjectModule.module.css';
+import { ProjectContext } from '../lib/contexts';
+import { useContext } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { mobileWidth } from '../lib/constants';
 
 interface IProps {
   info: IProject;

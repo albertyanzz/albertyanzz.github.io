@@ -1,10 +1,10 @@
-import { IExperience } from "../lib/types";
-import { useEffect, useState } from "react";
-import styles from "../styles/ExperienceModule.module.css";
-import { ExpContext } from "../lib/contexts";
-import { useContext } from "react";
-import { useMediaQuery } from "react-responsive";
-import { mobileWidth } from "../lib/constants";
+import { IExperience } from '../lib/types';
+import { useEffect, useState } from 'react';
+import styles from '../styles/ExperienceModule.module.css';
+import { ExpContext } from '../lib/contexts';
+import { useContext } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { mobileWidth } from '../lib/constants';
 
 interface IProps {
   info: IExperience;
@@ -48,7 +48,7 @@ export const ExperienceModule: React.FC<IProps> = ({ info }) => {
             <div className={styles.company}>{info.company}</div>
             <div className={styles.title}>{info.title}</div>
             <div className={styles.date}>
-              {info.dateStart} - {info.ended ? `${info.dateEnd}` : "Present"}
+              {info.dateStart} - {info.ended ? `${info.dateEnd}` : 'Present'}
             </div>
             <div
               className={styles.info}
