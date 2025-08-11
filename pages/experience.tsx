@@ -2,8 +2,11 @@ import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import { GetStaticProps } from 'next';
 import { getPostsDataByFolder } from '../lib/posts';
-import { Params } from 'next/dist/server/router';
 import { IExperience } from '../lib/types';
+
+interface ExperienceProps {
+  experienceData: IExperience[];
+}
 import { SideMenu } from '../components/SideMenu';
 import styles from '../styles/Experience.module.css';
 import { useMediaQuery } from 'react-responsive';
@@ -23,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Experience: NextPage<Params> = ({ experienceData }) => {
+const Experience: NextPage<ExperienceProps> = ({ experienceData }) => {
   //   const experienceJson = Promise.all(experienceData);
   //   console.log(experienceData);
   const mobile = useMediaQuery({

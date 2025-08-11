@@ -1,14 +1,11 @@
 ---
-company: Freelance
-title: Web Developer
-dateStart: June 2022
-ended: true
-dateEnd: July 2022
+title: TGIF Website
 logo: tgif.svg
 tech: [react, next, ts]
 ---
 
-- [Link here (Right click to open in new tab)](https://tgiftoastmaster.com)
+<!-- - [Link here (Right click to open in new tab)](https://tgiftoastmaster.com) -->
+
 - Coordinated development of website to showcase Toastmasters Club of 30+ members for potential newcomers and streamline daily club operations for club officers
 - Designed website using Figma to visualize design concepts for client and obtain instant feedback after communicating with clients to establish project goals and milestones
 - Implemented website with Next.js, ReactJS, and Typescript to optimize page performance, with 98 score on PageSpeed Insights
