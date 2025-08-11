@@ -18,6 +18,7 @@ export interface IExperience {
   logo: string;
   tech: string[];
   contentHtml: string;
+  order: number;
 }
 
 export interface IProject {
@@ -26,6 +27,7 @@ export interface IProject {
   logo: string;
   tech: string[];
   contentHtml: string;
+  order: number;
 }
 
 export interface IDirectory {

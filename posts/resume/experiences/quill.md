@@ -6,6 +6,7 @@ ended: true
 dateEnd: August 2025
 logo: quill_logo.png
 tech: [next, react, ts]
+order: 0
 ---
 
 - Founding engineer building embedded analytics platform serving 10+ clients. Architected complete refactor of core ReportBuilder component, implementing AST-driven architecture that reduced initial query load times by 90\% across 8 database types including PostgreSQL, BigQuery, and Snowflake.

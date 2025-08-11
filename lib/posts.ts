@@ -30,12 +30,18 @@ export async function getPostsDataByFolder(folderPath: string) {
     // Combine the data with the id
     return {
       id,
+      order: matterResult.data['order'],
       contentHtml,
       ...matterResult.data,
     };
   });
 
-  return allPostsData;
+  const resolvedPostsData = await Promise.all(allPostsData);
+  return resolvedPostsData.sort((a, b) => {
+    const orderA = a.order ?? Infinity;
+    const orderB = b.order ?? Infinity;
+    return orderA - orderB;
+  });
 }
 
 export function getAllPostIds() {

@@ -2,6 +2,7 @@
 title: TGIF Website
 logo: tgif.svg
 tech: [react, next, ts]
+order: 0
 ---
 
 <!-- - [Link here (Right click to open in new tab)](https://tgiftoastmaster.com) -->

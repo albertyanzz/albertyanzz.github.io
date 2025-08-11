@@ -6,6 +6,7 @@ ended: true
 dateEnd: May 2022
 logo: encore.svg
 tech: [js, react, ts]
+order: 2
 ---
 
 - Developed responsive single-page application with ReactJS and Typescript to showcase key company resources

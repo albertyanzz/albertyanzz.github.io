@@ -6,6 +6,7 @@ ended: true
 dateEnd: December 2022
 logo: usc.svg
 tech: []
+order: 1
 ---
 
 - Explained key algorithm concepts and walked through homework problems with students during weekly office hours to help build intuition in algorithms and advance problem solving skills
